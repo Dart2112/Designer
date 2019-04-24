@@ -5,7 +5,7 @@
 
 	<groupId>org.mineacademy</groupId>
 	<artifactId>Designer</artifactId>
-	<version>3.0.1</version>
+	<version>3.0.2</version>
 	<packaging>jar</packaging>
 
 	<name>Designer</name>
@@ -34,9 +34,9 @@
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
-			<groupId>org.mineacademy</groupId> <!-- Change this to com.github.kangarko -->
+			<groupId>com.github.kangarko</groupId> <!-- Make sure this is set to com.github.kangarko -->
 			<artifactId>Remain</artifactId>
-			<version>LATEST</version> <!-- Change this to the latest version -->
+			<version>3.0.1</version> <!-- Change this to the latest version -->
 			<scope>compile</scope>
 		</dependency>
 		<dependency>
