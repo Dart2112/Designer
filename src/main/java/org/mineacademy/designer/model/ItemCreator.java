@@ -115,7 +115,7 @@ public class ItemCreator {
 	 * The internal NBT tag, permanent
 	 *
 	 * This will be stored at the key "Your plugin name + _Item"
-	 * 
+	 *
 	 * @deprecated use with caution
 	 */
 	@Deprecated
@@ -230,6 +230,7 @@ public class ItemCreator {
 
 			if (entity == null) {
 				final String itemName = material.toString();
+
 				String entityRaw = itemName.replace("_SPAWN_EGG", "");
 
 				if ("MOOSHROOM".equals(entityRaw))
@@ -242,7 +243,6 @@ public class ItemCreator {
 					entity = EntityType.valueOf(entityRaw);
 
 				} catch (final Throwable t) {
-					t.printStackTrace();
 
 					// Probably version incompatible
 					RemainUtils.debug("The following item could not be transformed into " + entityRaw + " egg, item: " + is);
