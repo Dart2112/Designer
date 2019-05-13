@@ -151,6 +151,17 @@ public class ItemCreator {
 	}
 
 	/**
+	 * Attempts to remove all enchants, used to remove glow
+	 */
+	public ItemCreator removeEnchants() {
+		if (item != null)
+			for (final Enchantment enchant : item.getEnchantments().keySet())
+				item.removeEnchantment(enchant);
+
+		return this;
+	}
+
+	/**
 	 * Construct a valid {@link ItemStack} from all parameters above.
 	 *
 	 * @return the finished item
