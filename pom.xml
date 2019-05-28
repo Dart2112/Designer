@@ -34,9 +34,9 @@
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
-			<groupId>com.github.kangarko</groupId> <!-- Make sure this is set to com.github.kangarko -->
+			<groupId>org.mineacademy</groupId> <!-- Make sure this is set to com.github.kangarko -->
 			<artifactId>Remain</artifactId>
-			<version>3.1.0</version> <!-- Change this to the latest version -->
+			<version>LATEST</version> <!-- Change this to the latest version -->
 			<scope>compile</scope>
 		</dependency>
 		<dependency>
