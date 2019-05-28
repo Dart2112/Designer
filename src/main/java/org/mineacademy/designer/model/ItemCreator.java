@@ -216,17 +216,27 @@ public class ItemCreator {
 			}
 		}
 
-		CompMaterial material = this.material;
+		String materialName = this.material != null ? this.material.toString() : null;
 
 		{ // Assign both material and item
-			if (material == null)
-				material = CompMaterial.fromMaterial(is.getType());
+			if (materialName == null) {
+				final CompMaterial cm = CompMaterial.fromMaterial(is.getType());
 
-			Objects.requireNonNull(is, "ItemStack is null for " + material);
+				materialName = cm != null ? cm.toString() : null;
+			}
+
+			if (materialName == null)
+				try {
+					materialName = is.getType().toString();
+				} catch (final Throwable t) {
+				}
+
+			Objects.requireNonNull(is, "ItemStack is null for " + materialName);
+			Objects.requireNonNull(materialName, "Material cannot be null for " + is);
 		}
 
 		// Fix monster eggs
-		if (material.toString().endsWith("SPAWN_EGG")) {
+		if (materialName.endsWith("SPAWN_EGG")) {
 
 			EntityType entity = null;
 
@@ -240,9 +250,7 @@ public class ItemCreator {
 			}
 
 			if (entity == null) {
-				final String itemName = material.toString();
-
-				String entityRaw = itemName.replace("_SPAWN_EGG", "");
+				String entityRaw = materialName.replace("_SPAWN_EGG", "");
 
 				if ("MOOSHROOM".equals(entityRaw))
 					entityRaw = "MUSHROOM_COW";
